@@ -1,0 +1,29 @@
+{
+  "name": "airwatch",
+  "version": "1.0.0",
+  "description": "watch tawian's pm 2.5 status ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polo13999/airWatch.git"
+  },
+  "keywords": [
+    "next",
+    "react",
+    "hook",
+    "apollographql",
+    "mongo",
+    "firebase",
+    "pm2.5",
+    "taiwan"
+  ],
+  "author": "polo <polo13999@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polo13999/airWatch/issues"
+  },
+  "homepage": "https://github.com/polo13999/airWatch#readme"
+}
