@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    "buildvideo": "cd src && node buildVideo"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "ffmpeg": "^0.0.4",
     "localStorage": "^1.0.4",
     "moment": "^2.23.0",
     "puppeteer": "^1.11.0"

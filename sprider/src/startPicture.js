@@ -1,7 +1,6 @@
 const moment = require('moment')
 const fs = require('fs')
-
-const timer = 100000
+const timer = 80000
 const mkdirSync = async dirPath => {
   try {
     fs.mkdirSync(dirPath)
@@ -12,10 +11,11 @@ const mkdirSync = async dirPath => {
 
 module.exports = function(page) {
   setInterval(async () => {
-    let path = 'history/' + moment().format('YYYYMMDD')
-    await mkdirSync('history')
+    let path = __dirname + '/history/' + moment().format('YYYYMMDD')
+    await mkdirSync(__dirname + '/history')
     await mkdirSync(path)
     console.log('take picture smell')
-    await page.screenshot({ path: `${path}/${moment().format('HH-mm')}.png` })
+    let file = `img${moment().format('HHmm')}.png`
+    await page.screenshot({ path: `${path}/${file}`, fullPage: true })
   }, timer)
 }
