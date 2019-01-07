@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - '8'
+dist: trusty
+services:
+  - docker
+  - mongodb
+  # - redis-server
+env:
+  matrix:
+    - NODE_ENV=ci PORT=3000
+  global:
+    - secure: U/963+wDQJ7zT+S4LSCDZ9E87mrsDiAQt7YgZh/KmbJyVvBX7bj0JQRfxOz8/MT1b/LFodrRuxvl5yElwjeaRZ29o31HGL3RIfyMxs2eHuKYDlObUTzpB82yL2/wCiOZVJ+7Kf4hVbEEb49Lg2WLiLdn9jRn+RB/D7OWitHwYeG1dXKRvnbBiYbxzLgEB7wup7Pxmb+QxL5HLGTmMtOKoGxJW/8fDJR3/A0gQJtwJ5vD0CgSNA+1C5Rget0DJwBc1t6YcuWqM7k2XI+0unLHKrXYnNoJHAA7TwKnv3WtWaf1zG6nx8ub86tyX+tOKmqolCYdeQzepEiThopO+tWl9tNVXlbEV9gncSs/s4KujpoI+onk5a+vvUG5SdWeoSuj+q26XYfHCMGPs1PeLtdGmchFvkiIMvygtg2OG3/dsAhLZFCX+mO61KI99q069kIKX9AGSYXN5i+nTXZDtGzJnPifjF/TNR2EBbwhUcpid2ttxK6QXWqcwhQ8aeQQZyvbdyjYeqWG4UvrAHFdnd7tIZ9vBf306mnqEscp4lHiHALY/6MMe7w+33/YyrNOKQ+5wl1Vk7wvwHkckTxghQsLg7+gUSxAAzeaqjSXPxvV5PeEFvWwZq1rm0WCpfbZdh9klt7jGjFco/tD0FKf/9qoiQW1F1OOzS2OHyYzTw8+CvI=
+cache:
+  directories:
+    - node_modules
+    - client/node_modules
+    - server/node_modules
+    - sprider/node_modules
+install:
+  - npm install
+  - npm run install-dev
+script:
+  - nohup npm run ci &
+  - sleep 10
+  - npm run test
