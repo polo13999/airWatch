@@ -6,7 +6,7 @@
   "scripts": {
     "client": "cd client && npm run dev",
     "server": "cd server && node index.js --ignore tests",
-    "install-dev": "concurrently \"cd server && npm i\" \"cd client && npm i\"",
+    "install-dev": "concurrently \"cd server && npm i\" \"cd client && npm i\" \"cd sprider && npm i\"   ",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "ci": "concurrently \"npm run client\" \"npm run ci-server\"",
     "ci-server": "cd server && npm run ci",
@@ -31,7 +31,7 @@
     "taiwan"
   ],
   "author": "polo <polo13999@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/polo13999/airWatch/issues"
   },

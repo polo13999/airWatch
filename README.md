@@ -1,13 +1,47 @@
 # airWatch
 
-主要是要自動化擷取每小時間隔的圖片變化 藉由觀察是哪個污染源開始製造的
+[![Build Status](https://travis-ci.org/polo13999/airWatch.svg?branch=master)](https://travis-ci.org/polo13999/airWatch)
 
-使用 react hook
+each fixed Time get Taiwan's air Pollution picture and build a platform about air pollution
 
-#爬蟲執行
+### run sprider
 
-切換道 sprider 底下 執行 node index
+change fold to sprider and run node index
 
-#參考
+### Installing
+
+Run `npm run install-dev` to install all project dependencies.
+
+### Serve Project
+
+Run the next with the following command:
+
+```
+npm run dev
+```
+
+Once its running, head over to your browser to [see Project](http://localhost:3000/).
+
+### Running Tests
+
+To run the project tests, run the following command:
+
+```
+npm run test
+```
+
+### Deploy dockerized apps on Heroku
+
+not sure HeroKu or firebase ..
+
+## Authors
+
+- Polo Chi - [polo13999](https://github.com/polo13999)
+
+#Licensed under the MIT License, Copyright © 2018-present Polo Chi
+
+See [LICENSE](LICENSE.md) for more information.
+
+https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md
 
 https://github.com/GoogleChrome/puppeteer
