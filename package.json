@@ -6,6 +6,7 @@
   "scripts": {
     "client": "cd client && npm run dev",
     "server": "cd server && node index.js --ignore tests",
+    "sprider": "cd sprider && node index.js",
     "install-dev": "concurrently \"cd server && npm i\" \"cd client && npm i\" \"cd sprider && npm i\"   ",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "ci": "concurrently \"npm run client\" \"npm run ci-server\"",
