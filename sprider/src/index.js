@@ -3,7 +3,7 @@ const startPicture = require('./startPicture')
 
 ;(async () => {
   const browser = await puppeteer.launch({
-    headless: false
+    //headless: true,
     // userDataDir: './tempDir',
   })
   const page = await browser.newPage()
@@ -25,11 +25,12 @@ const startPicture = require('./startPicture')
   await page.waitFor('.gm-control-active')
 
   await page.evaluate(() => {
-    localStorage.setItem('savedLon', 120.63515381443676)
-    localStorage.setItem('savedLat', 22.486272096736997)
-    localStorage.setItem('savedZoom', 11)
+    localStorage.setItem('savedLon', 120.57514462321315)
+    localStorage.setItem('savedLat', 22.661415451784574)
+    localStorage.setItem('savedZoom', 13)
     window.location.reload()
   })
+
   await page.waitFor('.bootbox-close-button')
   await page.click('.bootbox-close-button')
 
