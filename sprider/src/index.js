@@ -2,7 +2,9 @@ const puppeteer = require('puppeteer')
 const startPicture = require('./startPicture')
 
 ;(async () => {
+  console.log('ready go')
   const browser = await puppeteer.launch({
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
     //headless: true,
     // userDataDir: './tempDir',
   })
