@@ -7,3 +7,7 @@
 #爬蟲執行
 
 切換道 sprider 底下 執行 node index
+
+#參考
+
+https://github.com/GoogleChrome/puppeteer
