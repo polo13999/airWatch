@@ -1,7 +1,7 @@
 const moment = require('moment')
 const fs = require('fs')
 
-const timer = 10000
+const timer = 100000
 const mkdirSync = async dirPath => {
   try {
     fs.mkdirSync(dirPath)
