@@ -12,7 +12,8 @@ const mkdirSync = async dirPath => {
 
 module.exports = function(page) {
   setInterval(async () => {
-    let path = moment().format('YYYYMMDD')
+    let path = 'history/' + moment().format('YYYYMMDD')
+    await mkdirSync('history')
     await mkdirSync(path)
     console.log('take picture smell')
     await page.screenshot({ path: `${path}/${moment().format('HH-mm')}.png` })
