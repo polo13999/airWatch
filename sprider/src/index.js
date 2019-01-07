@@ -5,18 +5,18 @@ const startPicture = require('./startPicture')
   console.log('ready go')
   const browser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox']
-    //headless: true,
+    //headless: false,
     // userDataDir: './tempDir',
   })
   const page = await browser.newPage()
-
-  let currentScreen = await page.evaluate(() => {
-    return {
-      width: window.screen.availWidth,
-      height: window.screen.availHeight
-    }
-  })
-  await page.setViewport(currentScreen)
+  await page.setViewport({ width: 1920, height: 1080 })
+  // let currentScreen = await page.evaluate(() => {
+  //   return {
+  //     width: window.screen.availWidth,
+  //     height: window.screen.availHeight
+  //   }
+  // })
+  // await page.setViewport(currentScreen)
 
   await page.goto('https://airbox.edimaxcloud.com/', {
     waitUntil: 'networkidle2'
@@ -29,7 +29,7 @@ const startPicture = require('./startPicture')
   await page.evaluate(() => {
     localStorage.setItem('savedLon', 120.57514462321315)
     localStorage.setItem('savedLat', 22.661415451784574)
-    localStorage.setItem('savedZoom', 13)
+    localStorage.setItem('savedZoom', 11)
     window.location.reload()
   })
 
