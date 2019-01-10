@@ -5,14 +5,18 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "buildvideo": "cd src && node buildVideo"
+    "buildvideo": "cd src && node buildVideo",
+    "addtime": "cd src && node addTime"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "cross-spawn": "^6.0.5",
     "ffmpeg": "^0.0.4",
+    "gm": "^1.23.1",
     "localStorage": "^1.0.4",
+    "mkdirp": "^0.5.1",
     "moment": "^2.23.0",
     "node-fetch": "^2.3.0",
     "puppeteer": "^1.11.0"
