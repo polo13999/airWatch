@@ -17,3 +17,12 @@ use puppeeter
 https://airbox.edimaxcloud.com/
 
 ask rebuild and for share to everyOne to use
+
+# use gm
+
+mac
+brew install imagemagick
+brew install graphicsmagick
+
+linux
+apt-get installImageMagick
