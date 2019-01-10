@@ -1,6 +1,6 @@
 import React from 'react'
 
 const page = () => {
-  return <div>第一天的程式碼</div>
+  return <div>Layout with Hook</div>
 }
 export default page
