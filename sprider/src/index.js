@@ -4,8 +4,8 @@ const startPicture = require('./startPicture')
 ;(async () => {
   console.log('ready go')
   const browser = await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    headless: false
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    //headless: false
     // userDataDir: './tempDir',
   })
   const page = await browser.newPage()
@@ -48,6 +48,7 @@ const startPicture = require('./startPicture')
       .click()
   })
   //開始照相
+  console.log('test')
   await startPicture(page)
   // on	123.97314951812494	savedLat	22.197005304949897	savedZoom
 })()
