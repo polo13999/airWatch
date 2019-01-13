@@ -1,7 +1,9 @@
 /node_modules/
 /client/node_modules/
-/client/.next
-/server/node_modules
-/sprider/node_modules
-/sprider/src/history
-/sprider/history
+/client/.next/
+/server/node_modules/
+/sprider/node_modules/
+/sprider/src/history/
+/sprider/history/
+/sprider/src/des/
+/sprider/src/video/

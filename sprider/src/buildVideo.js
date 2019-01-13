@@ -13,7 +13,7 @@ const mkdirSync = async dirPath => {
 const mkexec = async date => {
   console.log('start transfer')
   await mkdirSync('videos')
-  const cmdstr = `ffmpeg -r 20 -f image2 -s 1920x1080  -i '${__dirname}/history/${date}/img%*.png' -vcodec libx264 -crf 25  -pix_fmt yuv420p  ./videos/${date}.mp4 -y`
+  const cmdstr = `ffmpeg -r 20 -f image2 -s 1920x1080  -i '${__dirname}/des/${date}/img%*.png' -vcodec libx264 -crf 25  -pix_fmt yuv420p  ./videos/${date}.mp4 -y`
   console.log('cmdstr', cmdstr)
   await exec(cmdstr)
   console.log('end transfer')
