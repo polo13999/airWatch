@@ -4,9 +4,14 @@
 const fs = require('fs')
 const path = require('path')
 const moment = require('moment')
-const lastFold = moment().format('YYYYMMDD')
+let lastFold = moment().format('YYYYMMDD')
 const gm = require('gm')
 const mkdirp = require('mkdirp')
+
+if (process.argv[2]) {
+  lastFold = process.argv[2]
+  console.log('assign', lastFold)
+}
 
 const assignfold = path.join(__dirname, 'history/', lastFold)
 
@@ -27,7 +32,7 @@ const addTime = async file => {
     await gm(source)
       .stroke('#ffffff')
       .font(fontPath, 10)
-      .fontSize(20) //字体大小36
+      .fontSize(30) //字体大小36
       .drawText(20, 400, showText)
       .write(destinetionFile, function(err) {
         if (!err) console.log('done')
@@ -43,12 +48,3 @@ const getFilelist = async fold => {
 }
 
 getFilelist(assignfold)
-
-// const getfile=async(filelist)=>{
-//      addtime(file)
-// }
-// //get addtime
-
-// const addtime=async(file)=>{
-
-// }
