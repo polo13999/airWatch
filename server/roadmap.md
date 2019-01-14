@@ -1,8 +1,12 @@
 # server 端資料
 
+yarn server
+
 ## jwt
 
 ## apollographql
+
+playground : http://localhost:8080/graphql
 
 ## mongodb
 

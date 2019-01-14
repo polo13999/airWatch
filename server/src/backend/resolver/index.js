@@ -18,10 +18,10 @@
 //   Log,
 
 // )
-let OutIndex = {};
-OutIndex.Query = {};
-OutIndex.Mutation = {};
+let OutIndex = {}
+OutIndex.Query = {}
+OutIndex.Mutation = {}
 
-const AllResolve = [OutIndex.Query, OutIndex.Mutation];
+const AllResolve = [OutIndex.Query, OutIndex.Mutation]
 
-module.exports = AllResolve;
+module.exports = AllResolve

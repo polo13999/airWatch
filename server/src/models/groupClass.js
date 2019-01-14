@@ -10,4 +10,4 @@ const GroupClassSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = mongoose.model('Group', GroupClassSchema)
+module.exports = mongoose.model('GroupClass', GroupClassSchema)
