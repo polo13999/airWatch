@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ci-server": "echo \"Error: no test specified\" && exit 1"
+    "server": "node index  --ignore tests"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "express": "^4.16.4",
     "graphql": "^14.0.2",
     "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
     "mongoose": "^5.4.2"
   }
 }

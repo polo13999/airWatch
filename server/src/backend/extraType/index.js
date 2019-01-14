@@ -13,11 +13,5 @@ type SaleMoneyQ{
   _id:SaleUser  
   sumPrice:Float
 }
-`;
-const result = [
-  { typeDefs },
-  require("./auth")
-  // require('./user/user'),
-];
-
-module.exports = result;
+`
+module.exports = typeDefs

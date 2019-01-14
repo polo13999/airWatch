@@ -1,33 +1,31 @@
-const { makeExecutableSchema } = require("graphql-tools");
+const { makeExecutableSchema } = require('graphql-tools')
+const { AllDef, AllSchema, AllResolvers } = require('./backend')
 
-const AllDef = require("./schema");
-const AllResolvers = require("./resolver");
-
-const typeDefs = [];
-const queries = [];
-const mutations = [];
-
-typeDefs.push("scalar Date");
-typeDefs.push("scalar Object");
-
+const typeDefs = []
+const queries = []
+const mutations = []
 AllDef.forEach(s => {
-  typeDefs.push(s.typeDefs);
-  queries.push(s.queries);
-  mutations.push(s.mutations);
-});
+  typeDefs.push(s.typeDefs)
+})
+
+AllSchema.forEach(s => {
+  queries.push(s.queries)
+  mutations.push(s.mutations)
+})
+
 //console.log(' ...typeDefs', ...typeDefs)
 
 const RootQuery = `
   type Query { ${[...queries]} }
   type Mutation{ ${[...mutations]} }
-`;
+`
 
 const SchemaDefinition = `
   schema { query: Query, mutation: Mutation }
-`;
+`
 const result = makeExecutableSchema({
   typeDefs: [SchemaDefinition, RootQuery, ...typeDefs],
   resolvers: AllResolvers
-});
+})
 
-module.exports = result;
+module.exports = result
