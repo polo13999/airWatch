@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer')
 const startPicture = require('./startPicture')
-
+/* eslint-disable */
 ;(async () => {
   console.log('ready go')
   const browser = await puppeteer.launch({

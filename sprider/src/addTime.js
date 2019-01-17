@@ -10,6 +10,7 @@ const mkdirp = require('mkdirp')
 
 if (process.argv[2]) {
   lastFold = process.argv[2]
+  /* eslint-disable */
   console.log('assign', lastFold)
 }
 
@@ -19,6 +20,7 @@ const addTime = async file => {
   const source = path.join(__dirname, 'history/', lastFold, file)
   const destinetion = path.join(__dirname, 'history/', '../', 'des', lastFold)
   const destinetionFile = path.join(destinetion, file)
+  /* eslint-disable */
   console.log('destinetionFile', destinetionFile)
 
   const fontPath = path.join(__dirname, 'fonts/') + 'NotoSansCJKtc-Bold.otf'
@@ -38,6 +40,7 @@ const addTime = async file => {
         if (!err) console.log('done')
       })
   } catch (err) {
+    /* eslint-disable */
     console.log('err', err)
   }
 }
