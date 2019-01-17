@@ -2,6 +2,7 @@ const util = require('util')
 const exec = util.promisify(require('child_process').exec)
 const fs = require('fs')
 const moment = require('moment')
+/* eslint-disable */
 console.log('build video')
 const mkdirSync = async dirPath => {
   try {

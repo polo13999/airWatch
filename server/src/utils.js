@@ -1,24 +1,24 @@
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken')
 
-const config = require("../config");
-
+const config = require('../config')
+/* eslint-disable */
 function getUserId(ctx, throwError = true) {
-  const userToken = ctx.req.session.userToken;
+  const userToken = ctx.req.session.userToken
 
   if (userToken) {
     try {
-      const { _id } = jwt.verify(userToken, config.secret);
-      return _id;
+      const { _id } = jwt.verify(userToken, config.secret)
+      return _id
     } catch (err) {
-      console.log("err", err);
-      console.log("throwError", throwError);
-      return {};
+      console.log('err', err)
+      console.log('throwError', throwError)
+      return {}
       //if (throwError) throw new Error('Not authenticated')
     }
   }
-  return {};
+  return {}
 }
 
 module.exports = {
   getUserId
-};
+}

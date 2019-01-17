@@ -8,6 +8,7 @@ let lastFold = moment().format('YYYYMMDD')
 const gm = require('gm')
 const mkdirp = require('mkdirp')
 
+/* eslint-disable */
 if (process.argv[2]) {
   lastFold = process.argv[2]
   console.log('assign', lastFold)

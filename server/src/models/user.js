@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
-const crypto = require("crypto");
+const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
+const crypto = require('crypto')
 
-const { Schema } = mongoose;
-const fragment = require("./fragment/mutationWork");
-
+const { Schema } = mongoose
+const fragment = require('./fragment/mutationWork')
+/* eslint-disable */
 const UserSchema = new Schema(
   {
     userCode: String,
@@ -17,39 +17,39 @@ const UserSchema = new Schema(
     userAreaIndex: String,
     userClassIndex: String,
     userStatusIndex: String,
-    userBasicIndex: { type: Schema.Types.ObjectId, ref: "UserBasic" },
+    userBasicIndex: { type: Schema.Types.ObjectId, ref: 'UserBasic' },
     customerSubClassIndex: {
       type: Schema.Types.ObjectId,
-      ref: "customerSubClass"
+      ref: 'customerSubClass'
     },
 
     ...fragment
   },
   { timestamps: true }
-);
+)
 
-UserSchema.pre("save", function(next) {
-  const user = this;
-  if (!user.isModified("password")) return next();
+UserSchema.pre('save', function(next) {
+  const user = this
+  if (!user.isModified('password')) return next()
   //console.log('xxxxx')
   bcrypt.hash(user.password, 10, (err, hash) => {
-    if (err) return next(err);
-    user.password = hash;
-    next();
-  });
-});
+    if (err) return next(err)
+    user.password = hash
+    next()
+  })
+})
 
 UserSchema.methods.gravatar = function(size) {
-  if (!this.size) size = 200;
+  if (!this.size) size = 200
   if (!this.email) {
-    return "https://gravatar.com/avatar/?s" + size + "&d=retro";
+    return 'https://gravatar.com/avatar/?s' + size + '&d=retro'
   } else {
     const md5 = crypto
-      .createHash("md5")
+      .createHash('md5')
       .update(this.email)
-      .digest("hex");
-    return "https://gravatar.com/avatar/" + md5 + "?s" + size + "&d=retro";
+      .digest('hex')
+    return 'https://gravatar.com/avatar/' + md5 + '?s' + size + '&d=retro'
   }
-};
+}
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model('User', UserSchema)
