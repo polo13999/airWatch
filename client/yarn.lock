@@ -1186,6 +1186,13 @@ apollo-client@^2.4.8:
   optionalDependencies:
     "@types/async" "2.0.50"
 
+apollo-link-context@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/apollo-link-context/-/apollo-link-context-1.0.12.tgz#02d72e621a3b75239d4419a9bfd38d8bd9bb0d3f"
+  integrity sha512-gb4UptV9O6Kp3i5b2TlDEfPSL2LG//mTSb3zyuR5U2cAzu/huw98f1CCxcjUKTrlIMsQuE6G/hbaThDxnoIThQ==
+  dependencies:
+    apollo-link "^1.2.6"
+
 apollo-link-dedup@^1.0.0:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/apollo-link-dedup/-/apollo-link-dedup-1.0.13.tgz#bb22957e18b6125ae8bfb46cab6bda8d33ba8046"
@@ -1231,6 +1238,15 @@ apollo-link@^1.0.0, apollo-link@^1.0.6, apollo-link@^1.2.6:
   dependencies:
     apollo-utilities "^1.0.0"
     zen-observable-ts "^0.8.13"
+
+apollo-upload-client@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/apollo-upload-client/-/apollo-upload-client-10.0.0.tgz#6cc3d0ea2aef40bc237b655f5042809cacee1859"
+  integrity sha512-N0SENiEkZXoY4nl9xxrXFcj/cL0AVkSNQ4aYXSaruCBWE0aKpK6aCe4DBmiEHrK3FAsMxZPEJxBRIWNbsXT8dw==
+  dependencies:
+    apollo-link "^1.2.6"
+    apollo-link-http-common "^0.2.8"
+    extract-files "^5.0.0"
 
 apollo-utilities@1.0.27, apollo-utilities@^1.0.0, apollo-utilities@^1.0.27, apollo-utilities@^1.0.8:
   version "1.0.27"
@@ -2678,6 +2694,11 @@ extglob@^2.0.4:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
+
+extract-files@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/extract-files/-/extract-files-5.0.0.tgz#750f1e969b79b8e67a0ac40268dc6346fc339a3a"
+  integrity sha512-mTMXDGagB142JLMIbGRc11sNLPuN6G8qj5lRMx9T41Fkt3ot0OPkehcsLw05uT98LGEae2A1wFFDMkY4VEpbqg==
 
 extracted-loader@1.0.4:
   version "1.0.4"

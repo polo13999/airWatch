@@ -24,7 +24,7 @@ const menuTemplate = () => {
         <Icon type="team" />
         <span>捍衛家園</span>
       </Menu.Item>
-      <Menu.Item key="5">
+      <Menu.Item key="6">
         <Icon type="dislike" />
         <span>監督機關人員</span>
       </Menu.Item>
