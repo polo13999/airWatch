@@ -1,6 +1,6 @@
-var normalizedPath = require("path").join(__dirname);
-require("fs")
+var normalizedPath = require('path').join(__dirname)
+require('fs')
   .readdirSync(normalizedPath)
   .forEach(function(file) {
-    require("./" + file);
-  });
+    require('./' + file)
+  })

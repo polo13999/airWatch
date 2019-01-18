@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Layout, Icon } from 'antd'
 import Menu from './menu'
+import HeaderBlock from './headerBlock'
 const { Header, Sider, Content } = Layout
 
 const LayoutTemplate = props => {
@@ -16,11 +17,13 @@ const LayoutTemplate = props => {
       </Sider>
       <Layout>
         <Header style={{ background: '#fff', padding: 0 }}>
-          <Icon
-            className="trigger"
-            type={state.collapsed ? 'menu-unfold' : 'menu-fold'}
-            onClick={() => setState({ collapsed: !state.collapsed })}
-          />
+          <HeaderBlock>
+            <Icon
+              className="trigger"
+              type={state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={() => setState({ collapsed: !state.collapsed })}
+            />
+          </HeaderBlock>
         </Header>
         <Content
           style={{

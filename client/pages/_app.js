@@ -1,11 +1,11 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import Layout from '../src/components/layout'
+import Layout from '../src/containers/layout'
+import LoginBlock from '../src/containers/login'
 import { LocaleProvider } from 'antd'
 import withApolloClient from '../src/lib/withApolloClient'
 import { ApolloProvider } from 'react-apollo'
 import checkLoggedIn from '../src/lib/checkLoggedIn'
-
 import 'moment/locale/zh-tw'
 import zh_TW from 'antd/lib/locale-provider/zh_TW'
 import 'antd/dist/antd.less'
@@ -28,8 +28,12 @@ class MyApp extends App {
     }
   }
   render() {
-    const { Component, pageProps, apolloClient } = this.props
-    // console.log('apolloClient', apolloClient)
+    const { Component, pageProps, apolloClient, loggedInUser } = this.props
+    console.log('apolloggedInUserloClient', loggedInUser)
+    console.log('_app')
+    if (loggedInUser === null) {
+      return <LoginBlock />
+    }
     return (
       <Layout>
         <Container>

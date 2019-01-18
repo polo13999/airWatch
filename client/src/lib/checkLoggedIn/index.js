@@ -23,6 +23,6 @@ export default apolloClient => {
     .catch(err => {
       // eslint-disable-next-line no-console
       console.error('checkLoggedIn', err)
-      return { loggedInUser: {} }
+      return { loggedInUser: null }
     })
 }

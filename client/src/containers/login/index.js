@@ -1,58 +1,34 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Card, Input, Form, Button, message } from 'antd'
+import { Card, Input, Form, Button } from 'antd'
 import PropTypes from 'prop-types'
-
-import { getUser } from './grapgql'
+import { OutterWrap, CenterBlock } from '../../components/wrapPosition'
+//import { getUser } from './grapgql'
 
 const FormItem = Form.Item
-
-const WrapCenter = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: url('/static/img/bg.jpg');
-  background-size: cover;
-`
-const LoginBlock = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-`
-
-const Login = props => {
-  const { loginAction } = props
-  const { getFieldDecorator } = props.form
-
+const page = props => {
+  const { form } = props
+  const { getFieldDecorator } = form
   const handleSubmit = e => {
     e.preventDefault()
-    props.form.validateFields(async (err, values) => {
+    //console.log('送出')
+    form.validateFields(async err => {
       if (!err) {
-        try {
-          //console.log('loginInfo', loginInfo)
-          await loginAction.mutation({
-            variables: values,
-            refetchQueries: [
-              {
-                query: getUser
-              }
-            ]
-          })
-        } catch (error) {
-          //  console.log('Object.values(error)', Object.values(error))
-          message.error(`${Object.values(error)[0][0].message}!!`)
-        }
+        // try {
+        //   await loginAction.mutation({
+        //     variables: values,
+        //     refetchQueries: [{ query: getUser }]
+        //   })
+        // } catch (error) {
+        //   message.error(`${Object.values(error)[0][0].message}!!`)
+        // }
       }
     })
   }
-
   return (
-    <WrapCenter>
-      <LoginBlock className="title-test">
+    <OutterWrap>
+      <CenterBlock className="title-test">
         <Card
-          title="公司 ERP 系統登入"
+          title="空污監測者系統登入"
           style={{
             width: '100%',
             borderRadius: '5px',
@@ -81,20 +57,19 @@ const Login = props => {
             </FormItem>
             <FormItem wrapperCol={{ span: 12, offset: 5 }}>
               <Button className="login-button" type="primary" htmlType="submit">
-                登入系統
+                登入空污監測系統
               </Button>
             </FormItem>
           </Form>
         </Card>
-      </LoginBlock>
-    </WrapCenter>
+      </CenterBlock>
+    </OutterWrap>
   )
 }
 
-Login.propTypes = {
-  form: PropTypes.object || PropTypes.func,
-  loginAction: PropTypes.object,
+page.propTypes = {
+  getFieldDecorator: PropTypes.object || PropTypes.func,
+  form: PropTypes.object,
   loginInfo: PropTypes.object
 }
-
-export default Form.create()(Login)
+export default Form.create()(page)
