@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export default apolloClient => {
-  console.log('apolloClient', apolloClient)
+  //console.log('apolloClient', apolloClient)
   return apolloClient
     .query({
       query: gql`

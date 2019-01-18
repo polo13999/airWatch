@@ -14,6 +14,7 @@ module.exports = function(page) {
     let path = __dirname + '/history/' + moment().format('YYYYMMDD')
     await mkdirSync(__dirname + '/history')
     await mkdirSync(path)
+    /* eslint-disable */
     console.log('take picture smell')
     let file = `img${moment().format('HHmm')}.png`
     await page.screenshot({ path: `${path}/${file}`, fullPage: true })

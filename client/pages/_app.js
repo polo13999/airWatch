@@ -29,8 +29,8 @@ class MyApp extends App {
   }
   render() {
     const { Component, pageProps, apolloClient, loggedInUser } = this.props
-    console.log('apolloggedInUserloClient', loggedInUser)
-    console.log('_app')
+    // console.log('apolloggedInUserloClient', loggedInUser)
+    // console.log('_app')
     if (loggedInUser === null) {
       return <LoginBlock />
     }
