@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer')
 
 ;(async () => {
+  /* eslint-disable */
   console.log('ready go')
   const browser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox']

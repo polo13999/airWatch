@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export default apolloClient => {
-  console.log('apolloClient', apolloClient)
+  //console.log('apolloClient', apolloClient)
   return apolloClient
     .query({
       query: gql`
@@ -23,6 +23,6 @@ export default apolloClient => {
     .catch(err => {
       // eslint-disable-next-line no-console
       console.error('checkLoggedIn', err)
-      return { loggedInUser: {} }
+      return { loggedInUser: null }
     })
 }
