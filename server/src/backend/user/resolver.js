@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
-const config = require('../../config')
-const User = require('../models/user')
+const config = require('../../../config')
+const User = require('../../models/user')
 const { getUserId } = require('../utils')
 const Query = {
   Query: {

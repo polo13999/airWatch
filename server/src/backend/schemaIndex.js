@@ -1,4 +1,4 @@
 let schema = []
-schema[require('../backend/user/schema')]
+schema.push(require('./user/schema'))
 
 module.exports = schema

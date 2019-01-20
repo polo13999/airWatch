@@ -2,24 +2,9 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const cookieSession = require('cookie-session')
-const { ApolloServer, gql } = require('apollo-server-express')
 const config = require('./config')
 const mongoose = require('./mongoose')
-const { GraphQLSchema, GraphQLObjectType, GraphQLString } = require('graphql')
-
-const schema = new GraphQLSchema({
-  query: new GraphQLObjectType({
-    name: 'RootQueryType',
-    fields: {
-      hello: {
-        type: GraphQLString,
-        resolve() {
-          return 'hello world'
-        }
-      }
-    }
-  })
-})
+const server = require('./apolloMiddle/server')
 
 mongoose.connect(config.mongoURI)
 
@@ -40,28 +25,7 @@ app.use(
     secure: config.production
   })
 )
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
-const resolvers = {
-  Query: {
-    hello: () => 'Hello world!'
-  }
-}
 
-const server = new ApolloServer({
-  schema,
-  typeDefs,
-  resolvers,
-  playground: {
-    endpoint: '/graphql',
-    settings: {
-      'editor.theme': 'light'
-    }
-  }
-})
 server.applyMiddleware({ app })
 
 app.listen(port, err => {
