@@ -1,13 +1,12 @@
 import gql from 'graphql-tag'
 
 export default apolloClient => {
-  //console.log('apolloClient', apolloClient)
+  // console.log('apolloClient', apolloClient)
   return apolloClient
     .query({
       query: gql`
         query getUser {
           user {
-            _id
             account
             permission
             userCode
@@ -17,12 +16,12 @@ export default apolloClient => {
       `
     })
     .then(({ data }) => {
-      // console.log('data', data)
+      console.log('server err ')
       return { loggedInUser: data }
     })
     .catch(err => {
       // eslint-disable-next-line no-console
-      console.error('checkLoggedIn', err)
+      console.error('checkLoggedInerr', err)
       return { loggedInUser: null }
     })
 }
