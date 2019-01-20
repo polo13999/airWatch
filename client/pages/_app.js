@@ -44,7 +44,8 @@ class MyApp extends App {
               return <div>loading</div>
             }
             if (error) {
-              return <div>error</div>
+              console.log('error', error)
+              //return <div> error</div>
             }
             console.log('data', data)
             return (

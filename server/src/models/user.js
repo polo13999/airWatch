@@ -14,15 +14,6 @@ const UserSchema = new Schema(
     isAdmin: { type: Boolean, default: false },
     isSale: { type: Boolean, default: false },
     permission: Object,
-    userAreaIndex: String,
-    userClassIndex: String,
-    userStatusIndex: String,
-    userBasicIndex: { type: Schema.Types.ObjectId, ref: 'UserBasic' },
-    customerSubClassIndex: {
-      type: Schema.Types.ObjectId,
-      ref: 'customerSubClass'
-    },
-
     ...fragment
   },
   { timestamps: true }
