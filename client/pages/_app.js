@@ -38,14 +38,14 @@ class MyApp extends App {
     return (
       <ApolloProvider client={apolloClient}>
         <Query query={getUser}>
-          {({ data, loading, error }) => {
+          {({ data }) => {
             console.log('====>')
-            if (loading) {
-              return <div>loading</div>
-            }
-            if (error) {
-              return <div>error</div>
-            }
+            // if (loading) {
+            //   return <div>loading</div>
+            // }
+            // if (error) {
+            //   return <div>error</div>
+            // }
             console.log('data', data)
             return (
               <GlobalCtx.Provider value={{ data: 'test' }}>

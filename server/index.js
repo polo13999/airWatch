@@ -14,7 +14,7 @@ require('./config/seed/index')
 const port = process.env.PORT || 8080
 
 const app = express()
-
+//console.log('config', config)
 app.use(cors({ credentials: true, origin: config.origin }))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -26,7 +26,7 @@ app.use(
   })
 )
 
-server.applyMiddleware({ app })
+server.applyMiddleware({ app, path: '/graphql' })
 
 app.listen(port, err => {
   if (err) throw err

@@ -30,36 +30,28 @@ const Mutation = {
   Mutation: {
     login: async (_, args, ctx) => {
       const user = await User.findOne({ account: args.account })
-
       if (!user) {
         throw new Error('無此使用者')
       }
-
       const valid = await bcrypt.compare(args.password, user.password)
       if (!valid) {
         throw new Error('無效的密碼')
       }
 
-      // console.log('user', user)
+      //      console.log('user', user)
       if (!user.isAdmin) {
         if (user.userStatusIndex !== '5ba1eac79120014e90487afb') {
           throw new Error('帳號還沒有啟動歐')
         }
       }
-
       const token = jwt.sign(
-        {
-          _id: user._id,
-          account: user.account
-        },
+        { _id: user._id, account: user.account },
         config.secret,
-        {
-          expiresIn: '1d'
-        }
+        { expiresIn: '1d' }
       )
 
       ctx.req.session.userToken = token
-
+      console.log('ctx', ctx.req.session.userToken)
       return user
     },
 
