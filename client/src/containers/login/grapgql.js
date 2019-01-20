@@ -51,13 +51,7 @@ export const getUser = gql`
       permission
       userCode
       isAdmin
-      userAreaIndex
-      userStatusIndex
       active
-      customerSubClassIndex
-      userBasic {
-        name
-      }
     }
   }
 `

@@ -15,18 +15,31 @@ const port = process.env.PORT || 8080
 
 const app = express()
 //console.log('config', config)
-app.use(cors({ credentials: true, origin: config.origin }))
+//app.use(cors({ credentials: true, origin: config.origin }))
+
+const corsOptions = {
+  origin: config.origin,
+  credentials: true,
+  methods: ['GET', 'PUT', 'POST', 'OPTIONS']
+}
+
+app.use(cors(corsOptions))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
     keys: [config.cookieKey],
-    secure: config.production
+    secure: config.production,
+    path: '/'
   })
 )
 
-server.applyMiddleware({ app, path: '/graphql' })
+server.applyMiddleware({
+  app,
+  path: '/graphql',
+  cors: corsOptions
+})
 
 app.listen(port, err => {
   if (err) throw err

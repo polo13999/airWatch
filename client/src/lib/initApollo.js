@@ -14,8 +14,8 @@ if (!process.browser) {
 
 function create(initialState, { getToken }) {
   let httpLink = createUploadLink({
-    uri: `${envs.serverURL()}/graphql`
-    //credentials: 'include'
+    uri: `${envs.serverURL()}/graphql`,
+    credentials: 'include'
   })
   const authLink = setContext((operation, inData) => {
     const { headers } = inData
