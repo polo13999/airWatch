@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
-const config = require('../../config')
+const config = require('../../../config')
 
-const User = require('../models/user')
+const User = require('../../models/user')
 // const UserBasic = require('../models/userBasic')
 // const UserArea = require('../models/userArea')
 // const UserClass = require('../models/userClass')

@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 
-const config = require('../../config')
+const config = require('../../../config')
 /* eslint-disable */
 function getUserId(ctx, throwError = true) {
   const userToken = ctx.req.session.userToken
