@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Card, Input, Form, Button } from 'antd'
 import PropTypes from 'prop-types'
 import { OutterWrap, CenterBlock } from '../../components/wrapPosition'
 import { getUser, login } from './grapgql'
 import { Mutation } from 'react-apollo'
-//import { GlobalCtx } from '../../../pages/_app'
+import { GlobalCtx } from '../../../pages/_app'
 
 const FormItem = Form.Item
 const page = props => {
-  //const data = useContext(GlobalCtx)
+  const context = useContext(GlobalCtx)
 
-  const { form } = props
+  const { form, setState } = props
   const { getFieldDecorator } = form
 
   return (
@@ -21,16 +21,12 @@ const page = props => {
           //console.log('送出')
           form.validateFields(async (err, values) => {
             if (!err) {
-              // try {
+              console.log(
+                '              context.userLogin              ',
+                context.userLogin
+              )
               login({ variables: values, refetchQueries: [{ query: getUser }] })
-              console.log('data', data)
-              //   await loginAction.mutation({
-              //     variables: values,
-              //     refetchQueries: [{ query: getUser }]
-              //   })
-              // } catch (error) {
-              //   message.error(`${Object.values(error)[0][0].message}!!`)
-              // }
+              setState({ login: data })
             }
           })
         }
@@ -88,6 +84,7 @@ const page = props => {
 page.propTypes = {
   getFieldDecorator: PropTypes.object || PropTypes.func,
   form: PropTypes.object,
-  loginInfo: PropTypes.object
+  loginInfo: PropTypes.object,
+  setState: PropTypes.func
 }
 export default Form.create()(page)

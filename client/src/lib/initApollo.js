@@ -20,8 +20,8 @@ function create(initialState, { getToken }) {
   const authLink = setContext((operation, inData) => {
     const { headers } = inData
     const token = getToken()
-    // console.log('token', token)
-    // console.log('operation', operation)
+    console.log('token', token)
+    console.log('operation', operation)
     if (token) {
       return operation[
         {
