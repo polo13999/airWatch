@@ -56,8 +56,6 @@ sharp image resize https://github.com/lovell/sharp
 
 #data from
 
-本系統圖文資料 來自於 https://airbox.edimaxcloud.com 正在申請核准中 請先不要發布
-
 See [LICENSE](LICENSE.md) for more information.
 
 https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md
