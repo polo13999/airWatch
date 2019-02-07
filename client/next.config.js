@@ -2,6 +2,7 @@ const withPlugins = require('next-compose-plugins')
 
 const withLess = require('@zeit/next-less')
 const lessToJS = require('less-vars-to-js')
+const withTypescript = require('@zeit/next-typescript')
 
 const fs = require('fs')
 const path = require('path')
@@ -18,6 +19,7 @@ const themeVariables = lessToJS(
 )
 
 module.exports = withPlugins([
+  [withTypescript],
   [
     withLess,
     {

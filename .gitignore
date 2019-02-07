@@ -1,6 +1,7 @@
 /node_modules/
 /client/node_modules/
 /client/.next/
+/client/bin/
 /server/node_modules/
 /sprider/node_modules/
 /sprider/src/history/
