@@ -12,9 +12,18 @@ import 'antd/dist/antd.less'
 // import { Query } from 'react-apollo'
 // import { getUser } from '../src/containers/login/grapgql'
 
-export const GlobalCtx = createContext(0)
+export const GlobalCtx = createContext({})
+interface appType {
+  Component: any
+  pageProps: any
+  apolloClient: any
+  loggedInUser: any
+}
+interface appState {
+  login: Object
+}
 
-class MyApp extends App {
+class MyApp extends App<appType, appState> {
   static async getInitialProps(ctx) {
     const { Component } = ctx
     const { loggedInUser } = await checkLoggedIn(ctx.apolloClient)
