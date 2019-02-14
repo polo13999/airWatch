@@ -1,0 +1,15 @@
+machine:
+  node:
+    version: 8.9
+dependencies:
+  cache_directories:
+    - node_module
+  override:
+    - npm run install-dev
+test:
+  override:
+    - npm run test
+general:
+  branches:
+    only:
+      - master

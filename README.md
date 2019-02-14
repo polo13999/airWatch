@@ -4,6 +4,8 @@
 
 each fixed Time get Taiwan's air Pollution picture and build a platform about air pollution
 
+demoUrl: https:/nextto.tw
+
 ### run sprider
 
 change fold to sprider and run node index
@@ -11,6 +13,9 @@ change fold to sprider and run node index
 ### Installing
 
 Run `npm run install-dev` to install all project dependencies.
+
+Run `npm server` to run server
+Run `npm Client` to run dev Client
 
 ### Serve Project
 
@@ -49,18 +54,11 @@ apollograhpql https://github.com/apollographql
 monogo database https://www.mongodb.com/scale/database-software-open-
 ffmpeg https://www.ffmpeg.org/
 sharp image resize https://github.com/lovell/sharp
-
-###image to vedio
+typeorm https://github.com/typeorm/typeorm
 
 #Licensed under the MIT License, Copyright © 2018-present Polo Chi
 
-#data from
-
 See [LICENSE](LICENSE.md) for more information.
-
-https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md
-
-https://github.com/GoogleChrome/puppeteer
 
 #Roadmap
 
@@ -68,3 +66,7 @@ https://github.com/GoogleChrome/puppeteer
 [ClientRoadmap](./client/roadmap.md)
 [ServerRoadmap](./server/roadmap.md)
 [SpriderRoadmap](./sprider/roadmap.md)
+
+#參考資料
+
+https://github.com/sw-yx/react-typescript-cheatsheet?fbclid=IwAR2pHCZiEQzDgp2C6eBPen9dTLuynL17zD-8GAH22objwmoGo0lZ9URTeCo
